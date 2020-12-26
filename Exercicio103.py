@@ -1,24 +1,18 @@
-def separador():
-    return '-' * 30
+'''Esse exercício é sobre parâmetros opcionais em funções
+
+Faça um programa que tenha uma função chamada ficha(), que receba dois parâmetros opcionais: o nome de um jogador e quantos gols ele marcou.
+O programa deverá ser capaz de mostrar a ficha do jogador, mesmo que algum dado não tenha sido informado corretamente. 
+'''
 
 
-def chamadas():
-    nome = input('Nome do jogador: ')
-    gols = input('Número de gols ')
-    return nome, gols
-
-
-def ficha():
-    nome, gols = chamadas()
-    if nome.isalpha():
-        resp_n = f'O jogador {nome}'
-        if gols.isdecimal():
-            gols = int(gols)
-            resp_g = f' fez {gols} gol(s).'
-        return resp_n + resp_g
-    else:
-        return f'O jogador {nome} fez {gols} gol(s)'
-
-
-print(separador())
-print(ficha())
+# Programa principal
+n = str(input('Nome do jogador: '))
+g = str(input('Gols: '))
+if g.isnumeric():   # .isdecimal é melhor pq isnumeric cria um bug
+    g = int(g)
+else:
+    g = 0
+if n.strip() == '':  # muito boa a escolha pelo strip, já trata a possiblidade da pessoa digitar vários espaços
+    ficha(gol=g)
+else:
+    ficha(n, g)
