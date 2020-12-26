@@ -2,21 +2,23 @@ def separador():
     return '-' * 30
 
 
-def ficha(nome='<desconhecido>', gols=0):
-    nome = input('Nome: ')
-    if not nome:
-        nome = '<desconhecido>'
-    gols = input('Gols: ')
-    if not gols:
-        gols = int(0)
-    return f'O jogador {nome} fez {gols} gol(s).'
+def chamadas():
+    nome = input('Nome do jogador: ')
+    gols = input('Número de gols ')
+    return nome, gols
 
 
-print(separador())
-print(ficha())
-print(separador())
-print(ficha())
-print(separador())
-print(ficha())
+def ficha():
+    nome, gols = chamadas()
+    if nome.isalpha():
+        resp_n = f'O jogador {nome}'
+        if gols.isdecimal():
+            gols = int(gols)
+            resp_g = f' fez {gols} gol(s).'
+        return resp_n + resp_g
+    else:
+        return f'O jogador {nome} fez {gols} gol(s)'
+
+
 print(separador())
 print(ficha())
