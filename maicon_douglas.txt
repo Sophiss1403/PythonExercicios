@@ -1,0 +1,20 @@
+Encontre o valor mais próximo ao dado.
+
+Você recebe uma lista de valores como forma definida e um valor para o qual você precisa encontrar o mais próximo.
+
+Por exemplo, temos o seguinte set de números: 4, 7, 10, 11, 12, 17, e precisamos encontrar o valor mais próximo do número 9.
+Se classificarmos este set em ordem crescente, então à esquerda do número 9 está o número 7 e à direita - está o número 10.
+Mas 10 é mais próximo do que 7 e está no set, o que significa que a resposta correta é 10.
+
+Alguns esclarecimentos:
+
+- Se 2 números estiverem à mesma distância, você precisa escolher o menor;
+- O set de números é sempre não vazio, ou seja, o tamanho é> = 1;
+- O valor fornecido pode estar neste set, o que significa que é a resposta;
+- O set pode conter números positivos e negativos, mas são sempre inteiros;
+- O set não é classificado e consiste em números únicos.
+
+Entrada: Dois argumentos. Uma lista de valores na forma definida. O valor procurado é um int.
+
+Saída: Int.
+(tradução preguiçosa do google tradutor)
