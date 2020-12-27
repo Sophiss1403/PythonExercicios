@@ -10,26 +10,29 @@ Adicione também as docstrings da função'''
 
 
 def notas(*args, situ=False):
-    '''docstrings'''
-    qnt = f'A quantidade de notas inseridas foi {len(args)}\n'
-    maior = f'Maior nota: {max(args)}\n'
-    menor = f'Menor nota: {min(args)}\n'
-    s = 0
-    for i in args:
-        s += i
-    m = s / len(args)
-    media = f'Média {m}\n'
+    '''-> Funcao para analisar varias notas e situacao dos alunos;
+    param. args: uma ou mais notas do aluno em questao
+    param. situ: se True, analisa a situacao escolar do aluno, do contrario, nao o faz
+    return: dicionario com as notas minima e maxima, media, situacao escolar e quantidade de notas.
+    '''
+    dicio = {}
+    dicio['Quantidade'] = len(args)
+    dicio['Maior'] = max(args)
+    dicio['Menor'] = min(args)
+    m = sum(args) / len(args)
+    dicio['Média'] = m
     if situ:
         if m >= 5:
-            situ = 'Aprovação'
-            situ = f'Situação: {situ}'
-            return qnt+maior+menor+media+situ
+            dicio['Situação'] = 'Aprovação'
+            return dicio
         else:
-            situ = 'Status: Reprovação'
-            return qnt+maior+menor+media+situ
-    else:
-        return qnt+maior+menor+media
+            dicio['Situação'] = 'Reprovação'
+            return dicio
+    return dicio
 
 
 # Programa principal
 print(notas(1, 2, 3, 4, situ=True))
+print(notas(9.3, 2, 7, 10, 3))
+print()
+help(notas)
