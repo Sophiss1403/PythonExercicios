@@ -12,7 +12,7 @@ def maior(*args):
     if len(args) == 0:
         print('0') 
         print(f'Foram informados {len(args)} valores ao todo.')
-        print(f'O maior valor informado foi 0.')
+        print('O maior valor informado foi 0.')
     else:
         print()
         print(f'Foram informados {len(args)} valores ao todo.')
