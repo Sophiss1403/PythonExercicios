@@ -10,7 +10,8 @@ Adicione também as docstrings da função'''
 
 
 def notas(*args, situ=False):
-    '''docstrings'''
+    '''docstrings
+    '''
     qnt = f'A quantidade de notas inseridas foi {len(args)}\n'
     maior = f'Maior nota: {max(args)}\n'
     menor = f'Menor nota: {min(args)}\n'
